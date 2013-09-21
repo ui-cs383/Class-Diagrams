@@ -1,0 +1,7 @@
+Missions are dependent on Player and Character. 
+Missions have the Attributes of name, missionType, and restrictSide.
+Missions should have the functions getType(Name), checkRestriction(Name), checkSide(restrictSide), assignMission(Character). 
+
+Actions are dependent on Environ, Missions, and Character.
+Actions have the attributes resultList, drawSize, continueToDraw, shiftLoyalty, missionSuccess, bonusResult.
+Actions have the functions: getEnvironSize(), getMissionType(), drawCard(drawSize), continueDraw(), applyActions(resultList[missionType]), checkActionLetter(missionType), calculateBonus(), calculateShift(missionSuccess, bonusResult), loyaltyShift(shiftLoyalty).
