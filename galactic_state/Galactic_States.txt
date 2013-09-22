@@ -1,0 +1,96 @@
+﻿Galactic States
+Space
+Data fields:
+	ParentSpace: The next unit “up” the tree of Spaces
+	SiblingSpaces: List pointing to Spaces with same Parent Space
+	ChildSpaces: List pointing to Spaces comprising this Space
+	PresentStacks: A list of stacks present in this space
+	
+Methods:
+	GetParentSpace()
+	GetSiblingSpaces()
+	GetChildSpaces()
+	GetPresentStacks()
+	StackArrives()
+	StackLeaves()
+
+Galaxy
+Data fields:
+	Provinces: List pointing to the 5 provinces
+Methods:
+	GetProvince()
+
+Province
+Data fields:
+	Systems: List pointing to the 4-6 Systems of Province
+	StrategicFlag
+Methods:
+	GetSystem()
+	SetStrategicFlag()
+	GetStrategicFlag()
+
+System
+Data fields:
+	Name
+	Planets: List pointing to the 1-3 Planets of the System
+	DriftBoxes: List pointing to Driftbox 1 and Driftbox 2
+Methods:
+	GetName()
+	GetPlanet()
+
+Planet
+Data fields:
+	Name
+	Orbit Space
+	Environs 1-3
+	Loyalty: -2 to 2
+	Controller
+	RebellionFlag
+	CapitalFlag
+	ThroneFlag
+	Secret
+	PDB
+	Coords: XXX
+
+Methods:
+	ChangeLoyalty()
+	ChangeController()
+	ChangeRebellion()
+	GetSecret()
+	GetPDB()
+	GetRace()
+	GetCoords()
+	IsStarfaring()
+	IsCapital()
+	IsThrone()
+	IsRebelling()
+
+Environ
+Data fields:
+	EnvironSize 3-6
+	StarfaringRace 0-8
+	Race
+	EnvironType
+	ResourceRating
+	CoupRating
+	Creature
+	Sovereign
+	SovereignType
+Methods:
+	GetStarfaring()
+	GetRace()
+	GetEnvironType()
+	GetResourceRating()
+	GetCoupRating()
+	GetCreature()
+	GetSovereign()
+PDB
+Data fields:
+	UpFlag
+	Level
+Methods:
+	PutUp()
+	PutDown()
+	GetLevel()
+	ChangeLevel()
+	Atrocity()
