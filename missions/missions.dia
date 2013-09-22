@@ -213,13 +213,13 @@ shuffle()#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O3">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.9601,16.7162"/>
+        <dia:point val="29.1601,17.9662"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.9101,16.6662;44.2601,19.0662"/>
+        <dia:rectangle val="29.1101,17.9162;44.4601,20.3162"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="28.9601,16.7162"/>
+        <dia:point val="29.1601,17.9662"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="15.25"/>
@@ -248,7 +248,7 @@ shuffle()#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.5851,18.1062"/>
+            <dia:point val="36.7851,19.3562"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -261,13 +261,13 @@ shuffle()#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O4">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.9601,18.9662"/>
+        <dia:point val="29.1601,20.2162"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.9101,18.9162;44.3101,25.7162"/>
+        <dia:rectangle val="29.1101,20.1662;44.5101,26.9662"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="28.9601,18.9662"/>
+        <dia:point val="29.1601,20.2162"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="15.300000000000001"/>
@@ -291,9 +291,7 @@ shuffle()#</dia:string>
 int drawSize
 string terrainType
 boolean continueToDraw
-int shiftLoyalty
-boolean missionSuccess
-int bonusResult#</dia:string>
+boolean missionSuccess#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -302,7 +300,7 @@ int bonusResult#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.6101,20.1562"/>
+            <dia:point val="36.8101,22.2062"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -315,13 +313,13 @@ int bonusResult#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O5">
       <dia:attribute name="obj_pos">
-        <dia:point val="28.9601,25.3268"/>
+        <dia:point val="29.1601,26.5768"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="28.9101,25.2768;44.3001,34.4768"/>
+        <dia:rectangle val="29.1101,26.5268;44.5001,35.7268"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="28.9601,25.3268"/>
+        <dia:point val="29.1601,26.5768"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="15.290000000000006"/>
@@ -346,11 +344,8 @@ getMissionType()
 getTerrainType()
 drawCard(drawSize)
 continueDraw()
-applyActions(resultList[missionType])
-checkActionLetter(missionType)
-calculateBonus()
-calculateShift(missionSuccess, bonusResult)
-loyaltyShift(shiftLoyalty)#</dia:string>
+processResult()
+checkActionLetter(missionType)#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -359,7 +354,7 @@ loyaltyShift(shiftLoyalty)#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.6051,26.5168"/>
+            <dia:point val="36.8051,28.9668"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -420,19 +415,19 @@ loyaltyShift(shiftLoyalty)#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O7">
       <dia:attribute name="obj_pos">
-        <dia:point val="29.1499,5.01622"/>
+        <dia:point val="29.1499,4.96622"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29.0999,4.96622;44.4749,8.56622"/>
+        <dia:rectangle val="29.0999,4.91622;44.4749,10.9162"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="29.1499,5.01622"/>
+        <dia:point val="29.1499,4.96622"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="15.274999999999679"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.5000000014901165"/>
+        <dia:real val="5.9000000014901168"/>
       </dia:attribute>
       <dia:attribute name="border_width">
         <dia:real val="0.10000000149011612"/>
@@ -448,7 +443,10 @@ loyaltyShift(shiftLoyalty)#</dia:string>
           <dia:attribute name="string">
             <dia:string>#string missionName
 string missionType
-string restrictSide#</dia:string>
+string restrictSide
+int totalBonus
+boolean missionResult
+#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -457,7 +455,7 @@ string restrictSide#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.7874,6.20622"/>
+            <dia:point val="36.7874,6.15622"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -470,19 +468,19 @@ string restrictSide#</dia:string>
     </dia:object>
     <dia:object type="Flowchart - Box" version="0" id="O8">
       <dia:attribute name="obj_pos">
-        <dia:point val="29.1499,8.44122"/>
+        <dia:point val="29.1441,9.94122"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="29.0999,8.39122;44.4499,12.7912"/>
+        <dia:rectangle val="29.0941,9.89122;44.4999,15.8912"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="29.1499,8.44122"/>
+        <dia:point val="29.1441,9.94122"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="15.249999999999998"/>
+        <dia:real val="15.305799999999989"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="4.3000000014901163"/>
+        <dia:real val="5.9000000014901168"/>
       </dia:attribute>
       <dia:attribute name="border_width">
         <dia:real val="0.10000000149011612"/>
@@ -499,7 +497,9 @@ string restrictSide#</dia:string>
             <dia:string>#getType(missionName)
 checkRestriction(missionName)
 checkSide(restrictSide)
-assignMission(Character)#</dia:string>
+assignMission(Character)
+getSuccess()
+calculateBonus()#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -508,7 +508,7 @@ assignMission(Character)#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="36.7749,9.63122"/>
+            <dia:point val="36.797,11.1312"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -524,13 +524,13 @@ assignMission(Character)#</dia:string>
         <dia:point val="20.7,13.8409"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="20.65,6.43532;29.2617,13.8909"/>
+        <dia:rectangle val="20.65,7.58532;29.2617,13.8909"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="20.7,13.8409"/>
         <dia:point val="24.9249,13.8409"/>
-        <dia:point val="24.9249,6.76622"/>
-        <dia:point val="29.1499,6.76622"/>
+        <dia:point val="24.9249,7.91622"/>
+        <dia:point val="29.1499,7.91622"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -559,13 +559,13 @@ assignMission(Character)#</dia:string>
         <dia:point val="20.7,13.8409"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="20.65,13.7909;29.0719,22.6471"/>
+        <dia:rectangle val="20.65,13.7909;29.2719,23.8971"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="20.7,13.8409"/>
-        <dia:point val="24.8301,13.8409"/>
-        <dia:point val="24.8301,22.3162"/>
-        <dia:point val="28.9601,22.3162"/>
+        <dia:point val="24.9301,13.8409"/>
+        <dia:point val="24.9301,23.5662"/>
+        <dia:point val="29.1601,23.5662"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -627,13 +627,13 @@ assignMission(Character)#</dia:string>
         <dia:point val="60.144,3.93006"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="44.3636,3.88006;60.194,7.09712"/>
+        <dia:rectangle val="44.3636,3.88006;60.194,8.24712"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="60.144,3.93006"/>
         <dia:point val="52.3097,3.93006"/>
-        <dia:point val="52.3097,6.76622"/>
-        <dia:point val="44.4754,6.76622"/>
+        <dia:point val="52.3097,7.91622"/>
+        <dia:point val="44.4754,7.91622"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -727,13 +727,13 @@ assignMission(Character)#</dia:string>
         <dia:point val="60.1342,9.13169"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="44.3636,6.43532;60.1842,9.18169"/>
+        <dia:rectangle val="44.3636,7.58532;60.1842,9.18169"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="60.1342,9.13169"/>
         <dia:point val="52.3048,9.13169"/>
-        <dia:point val="52.3048,6.76622"/>
-        <dia:point val="44.4754,6.76622"/>
+        <dia:point val="52.3048,7.91622"/>
+        <dia:point val="44.4754,7.91622"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -789,46 +789,12 @@ assignMission(Character)#</dia:string>
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - ZigZagLine" version="1" id="O17">
+    <dia:object type="Standard - Text" version="1" id="O17">
       <dia:attribute name="obj_pos">
-        <dia:point val="60.037,18.0755"/>
+        <dia:point val="54.7941,19.8125"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="44.1988,18.0255;60.087,22.6471"/>
-      </dia:attribute>
-      <dia:attribute name="orth_points">
-        <dia:point val="60.037,18.0755"/>
-        <dia:point val="52.1738,18.0755"/>
-        <dia:point val="52.1738,22.3162"/>
-        <dia:point val="44.3106,22.3162"/>
-      </dia:attribute>
-      <dia:attribute name="orth_orient">
-        <dia:enum val="0"/>
-        <dia:enum val="1"/>
-        <dia:enum val="0"/>
-      </dia:attribute>
-      <dia:attribute name="autorouting">
-        <dia:boolean val="true"/>
-      </dia:attribute>
-      <dia:attribute name="end_arrow">
-        <dia:enum val="1"/>
-      </dia:attribute>
-      <dia:attribute name="end_arrow_length">
-        <dia:real val="0.5"/>
-      </dia:attribute>
-      <dia:attribute name="end_arrow_width">
-        <dia:real val="0.5"/>
-      </dia:attribute>
-      <dia:connections>
-        <dia:connection handle="1" to="O4" connection="16"/>
-      </dia:connections>
-    </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O18">
-      <dia:attribute name="obj_pos">
-        <dia:point val="54.7338,17.9341"/>
-      </dia:attribute>
-      <dia:attribute name="obj_bb">
-        <dia:rectangle val="54.7338,17.2941;56.8538,18.0666"/>
+        <dia:rectangle val="54.7941,19.1725;56.9141,19.945"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -842,7 +808,7 @@ assignMission(Character)#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="54.7338,17.9341"/>
+            <dia:point val="54.7941,19.8125"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -856,18 +822,18 @@ assignMission(Character)#</dia:string>
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - ZigZagLine" version="1" id="O19">
+    <dia:object type="Standard - ZigZagLine" version="1" id="O18">
       <dia:attribute name="obj_pos">
         <dia:point val="60.0724,26.5695"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="44.1982,21.9853;60.1224,26.6195"/>
+        <dia:rectangle val="44.3974,23.2353;60.1224,26.6195"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="60.0724,26.5695"/>
         <dia:point val="52.1915,26.5695"/>
-        <dia:point val="52.1915,22.3162"/>
-        <dia:point val="44.31,22.3162"/>
+        <dia:point val="52.1915,23.5662"/>
+        <dia:point val="44.5092,23.5662"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -890,7 +856,7 @@ assignMission(Character)#</dia:string>
         <dia:connection handle="1" to="O4" connection="16"/>
       </dia:connections>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O20">
+    <dia:object type="Standard - Text" version="1" id="O19">
       <dia:attribute name="obj_pos">
         <dia:point val="54.9105,25.721"/>
       </dia:attribute>
@@ -923,7 +889,7 @@ assignMission(Character)#</dia:string>
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Text" version="1" id="O21">
+    <dia:object type="Standard - Text" version="1" id="O20">
       <dia:attribute name="obj_pos">
         <dia:point val="54.9813,26.4281"/>
       </dia:attribute>
@@ -956,16 +922,16 @@ assignMission(Character)#</dia:string>
         <dia:enum val="3"/>
       </dia:attribute>
     </dia:object>
-    <dia:object type="Standard - Line" version="0" id="O22">
+    <dia:object type="Standard - Line" version="0" id="O21">
       <dia:attribute name="obj_pos">
-        <dia:point val="36.5614,12.8783"/>
+        <dia:point val="36.797,15.8412"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="36.2459,12.8281;36.9077,16.7785"/>
+        <dia:rectangle val="36.4606,15.791;37.1224,18.0279"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="36.5614,12.8783"/>
-        <dia:point val="36.5794,16.6667"/>
+        <dia:point val="36.797,15.8412"/>
+        <dia:point val="36.7895,17.9161"/>
       </dia:attribute>
       <dia:attribute name="numcp">
         <dia:int val="1"/>
@@ -980,7 +946,70 @@ assignMission(Character)#</dia:string>
         <dia:real val="0.5"/>
       </dia:attribute>
       <dia:connections>
+        <dia:connection handle="0" to="O8" connection="13"/>
         <dia:connection handle="1" to="O3" connection="16"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - ZigZagLine" version="1" id="O22">
+      <dia:attribute name="obj_pos">
+        <dia:point val="59.7941,20.1125"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="44.3983,20.0625;59.8441,23.8971"/>
+      </dia:attribute>
+      <dia:attribute name="orth_points">
+        <dia:point val="59.7941,20.1125"/>
+        <dia:point val="52.1941,20.1125"/>
+        <dia:point val="52.1941,23.5662"/>
+        <dia:point val="44.5101,23.5662"/>
+      </dia:attribute>
+      <dia:attribute name="orth_orient">
+        <dia:enum val="0"/>
+        <dia:enum val="1"/>
+        <dia:enum val="0"/>
+      </dia:attribute>
+      <dia:attribute name="autorouting">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="1" to="O4" connection="16"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - Line" version="0" id="O23">
+      <dia:attribute name="obj_pos">
+        <dia:point val="36.7895,17.9161"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="36.4641,15.7294;37.1259,17.9662"/>
+      </dia:attribute>
+      <dia:attribute name="conn_endpoints">
+        <dia:point val="36.7895,17.9161"/>
+        <dia:point val="36.797,15.8412"/>
+      </dia:attribute>
+      <dia:attribute name="numcp">
+        <dia:int val="1"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow">
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_length">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:attribute name="end_arrow_width">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O3" connection="16"/>
+        <dia:connection handle="1" to="O8" connection="13"/>
       </dia:connections>
     </dia:object>
   </dia:layer>
