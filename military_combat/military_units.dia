@@ -1746,13 +1746,13 @@
         <dia:point val="38.284,17.1259"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="38.234,17.0759;60.4915,23.5759"/>
+        <dia:rectangle val="38.234,17.0759;60.4914,23.5759"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="38.284,17.1259"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="22.157499999999999"/>
+        <dia:real val="22.157421875000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="6.3999999999999995"/>
@@ -3453,8 +3453,8 @@
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="60.4918,20.3259"/>
-        <dia:point val="64.9779,20.3259"/>
-        <dia:point val="64.9779,38.6895"/>
+        <dia:point val="64.9778,20.3259"/>
+        <dia:point val="64.9778,38.6895"/>
         <dia:point val="68.6639,38.6895"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
@@ -6175,7 +6175,7 @@
         <dia:point val="0.45,7.85"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="0.4,7.8;18.34,9.6"/>
+        <dia:rectangle val="0.4,7.8;18.34,10.4"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -6187,7 +6187,7 @@
         <dia:real val="17.84"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="1.7"/>
+        <dia:real val="2.5"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000000000001"/>
@@ -6201,7 +6201,8 @@
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#Authors: Samuel Foster, Andrew Schwartzmeyer#</dia:string>
+            <dia:string>#Authors: Samuel Foster, Andrew Schwartzmeyer
+reviewed by: Emeth Thompson &amp; Justin Hall#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="monospace" style="0" name="Courier"/>
