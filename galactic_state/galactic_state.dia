@@ -2782,19 +2782,19 @@
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="41.5008,11.9204"/>
+        <dia:point val="41.5008,11.9205"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="38.0712,11.1704;42.2508,15.9216"/>
+        <dia:rectangle val="38.0712,11.1705;42.2508,15.9245"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="41.5008,11.9204"/>
+        <dia:point val="41.5008,11.9205"/>
         <dia:point val="41.5008,13.871"/>
         <dia:point val="38.1212,13.871"/>
-        <dia:point val="38.1212,15.1216"/>
+        <dia:point val="38.1212,15.1245"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -2802,7 +2802,7 @@
         <dia:enum val="1"/>
       </dia:attribute>
       <dia:attribute name="orth_autoroute">
-        <dia:boolean val="true"/>
+        <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="text_colour">
         <dia:color val="#000000"/>
@@ -3134,7 +3134,7 @@
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="assoc_type">
-        <dia:enum val="1"/>
+        <dia:enum val="2"/>
       </dia:attribute>
       <dia:attribute name="role_a">
         <dia:string>##</dia:string>
