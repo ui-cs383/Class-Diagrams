@@ -10,19 +10,19 @@
     <dia:attribute name="paper">
       <dia:composite type="paper">
         <dia:attribute name="name">
-          <dia:string>#A4#</dia:string>
+          <dia:string>#Letter#</dia:string>
         </dia:attribute>
         <dia:attribute name="tmargin">
-          <dia:real val="2.8222000598907471"/>
+          <dia:real val="2.5399999618530273"/>
         </dia:attribute>
         <dia:attribute name="bmargin">
-          <dia:real val="2.8222000598907471"/>
+          <dia:real val="2.5399999618530273"/>
         </dia:attribute>
         <dia:attribute name="lmargin">
-          <dia:real val="2.8222000598907471"/>
+          <dia:real val="2.5399999618530273"/>
         </dia:attribute>
         <dia:attribute name="rmargin">
-          <dia:real val="2.8222000598907471"/>
+          <dia:real val="2.5399999618530273"/>
         </dia:attribute>
         <dia:attribute name="is_portrait">
           <dia:boolean val="true"/>
