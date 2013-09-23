@@ -4539,7 +4539,7 @@
         <dia:point val="46.8088,38.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="45.4613,38.55;48.6563,41.8"/>
+        <dia:rectangle val="45.4612,38.55;48.6562,41.8"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -4574,7 +4574,7 @@
         <dia:point val="38,-9"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="37.95,-9.05;51.655,-5.65"/>
+        <dia:rectangle val="37.95,-9.05;51.655,-4.85"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -4586,7 +4586,7 @@
         <dia:real val="13.605"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.3000000000000003"/>
+        <dia:real val="4.0999999999999996"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000000000001"/>
@@ -4602,7 +4602,8 @@
           <dia:attribute name="string">
             <dia:string>#Sean Harris
 Ranger Adams
-Character Combat and Dependencies#</dia:string>
+Character Combat and Dependencies
+Reviewed by Justin Hall#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="monospace" style="0" name="Courier"/>
@@ -4611,7 +4612,7 @@ Character Combat and Dependencies#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="38.35,-7.8175"/>
+            <dia:point val="38.35,-7.755"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
