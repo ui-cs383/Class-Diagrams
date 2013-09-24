@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 SEP 2013 17:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 SEP 2013 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,10 +248,15 @@ File: ./images/overview.png Graphic file (type png)
 <use ./images/overview.png>
 Package pdftex.def Info: ./images/overview.png used on input line 20.
 (pdftex.def)             Requested size: 469.74442pt x 379.07826pt.
- [1
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./i
-mages/overview.png>]
+Overfull \hbox (2.60048pt too wide) in paragraph at lines 19--23
+[]  
+ []
+
+[1
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2 <./images/overview.png>]
 <./images/character_combat.png, id=13, 1326.9575pt x 1246.6575pt>
 File: ./images/character_combat.png Graphic file (type png)
 
@@ -259,50 +264,70 @@ File: ./images/character_combat.png Graphic file (type png)
 Package pdftex.def Info: ./images/character_combat.png used on input line 29.
 (pdftex.def)             Requested size: 469.747pt x 441.32054pt.
 
-<./images/galactic_events.png, id=14, 711.65875pt x 540.0175pt>
+Overfull \hbox (2.60306pt too wide) in paragraph at lines 28--31
+[]  
+ []
+
+[3 <./images/character_combat.png>]
+<./images/galactic_events.png, id=17, 711.65875pt x 540.0175pt>
 File: ./images/galactic_events.png Graphic file (type png)
 
 <use ./images/galactic_events.png>
-Package pdftex.def Info: ./images/galactic_events.png used on input line 35.
+Package pdftex.def Info: ./images/galactic_events.png used on input line 36.
 (pdftex.def)             Requested size: 469.75052pt x 356.45384pt.
- [3 <./images/character_combat.png>]
-<./images/galactic_state.png, id=18, 1079.03125pt x 932.48375pt>
+
+Overfull \hbox (2.60658pt too wide) in paragraph at lines 35--38
+[]  
+ []
+
+[4 <./images/galactic_events.png>]
+<./images/galactic_state.png, id=21, 1079.03125pt x 932.48375pt>
 File: ./images/galactic_state.png Graphic file (type png)
 
 <use ./images/galactic_state.png>
-Package pdftex.def Info: ./images/galactic_state.png used on input line 43.
+Package pdftex.def Info: ./images/galactic_state.png used on input line 45.
 (pdftex.def)             Requested size: 469.7535pt x 405.9544pt.
- [4 <./images/galactic_events.png>]
-<./images/military_units.png, id=22, 3001.2125pt x 867.24pt>
+
+Overfull \hbox (2.60956pt too wide) in paragraph at lines 44--47
+[]  
+ []
+
+[5 <./images/galactic_state.png>]
+<./images/military_units.png, id=25, 3001.2125pt x 867.24pt>
 File: ./images/military_units.png Graphic file (type png)
 
 <use ./images/military_units.png>
-Package pdftex.def Info: ./images/military_units.png used on input line 51.
+Package pdftex.def Info: ./images/military_units.png used on input line 54.
 (pdftex.def)             Requested size: 469.71681pt x 135.73088pt.
- [5 <./images/galactic_state.png>]
-<./images/military_combat.png, id=26, 2028.57875pt x 771.88374pt>
+ [6 <./images/military_units.png>]
+<./images/military_combat.png, id=29, 2028.57875pt x 771.88374pt>
 File: ./images/military_combat.png Graphic file (type png)
 
 <use ./images/military_combat.png>
-Package pdftex.def Info: ./images/military_combat.png used on input line 54.
+Package pdftex.def Info: ./images/military_combat.png used on input line 58.
 (pdftex.def)             Requested size: 469.75153pt x 178.74265pt.
-
-<./images/missions.png, id=27, 753.81625pt x 527.9725pt>
+ [7 <./images/military_combat.png>]
+<./images/missions.png, id=34, 753.81625pt x 527.9725pt>
 File: ./images/missions.png Graphic file (type png)
 
 <use ./images/missions.png>
-Package pdftex.def Info: ./images/missions.png used on input line 61.
+Package pdftex.def Info: ./images/missions.png used on input line 67.
 (pdftex.def)             Requested size: 469.75374pt x 329.01526pt.
- [6 <./images/military_units.png> <./images/military_combat.png>]
-<./images/resources_taxation.png, id=31, 2009.5075pt x 966.61125pt>
+
+Overfull \hbox (2.6098pt too wide) in paragraph at lines 66--69
+[]  
+ []
+
+[8 <./images/missions.png>]
+<./images/resources_taxation.png, id=38, 2009.5075pt x 966.61125pt>
 File: ./images/resources_taxation.png Graphic file (type png)
 
 <use ./images/resources_taxation.png>
-Package pdftex.def Info: ./images/resources_taxation.png used on input line 68.
+Package pdftex.def Info: ./images/resources_taxation.png used on input line 75.
 
 (pdftex.def)             Requested size: 469.75067pt x 225.95898pt.
- [7 <./images/missions.png>] [8 <./images/resources_taxation.png>] (./fitg-clas
-sdiagrams.aux) ) 
+ [9 <./images/resources_taxation.png>]
+(./fitg-classdiagrams.aux) ) 
 Here is how much of TeX's memory you used:
  2144 strings out of 493488
  31681 string characters out of 3141326
@@ -311,14 +336,14 @@ Here is how much of TeX's memory you used:
  8808 words of font info for 31 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,8n,23p,251b,175s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr17.pfb>
-Output written on fitg-classdiagrams.pdf (8 pages, 688503 bytes).
+</usr/local/texlive/2012/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb>
+Output written on fitg-classdiagrams.pdf (9 pages, 689089 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

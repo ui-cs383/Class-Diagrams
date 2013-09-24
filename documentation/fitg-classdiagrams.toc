@@ -2,10 +2,10 @@
 \contentsline {subsection}{\numberline {1.1}Overview Diagram}{1}
 \contentsline {section}{\numberline {2}Class Diagrams}{3}
 \contentsline {subsection}{\numberline {2.1}Character Combat}{3}
-\contentsline {subsection}{\numberline {2.2}Galactic Events}{3}
-\contentsline {subsection}{\numberline {2.3}Galactic State}{4}
-\contentsline {subsection}{\numberline {2.4}Military Combat and Military Units}{5}
+\contentsline {subsection}{\numberline {2.2}Galactic Events}{4}
+\contentsline {subsection}{\numberline {2.3}Galactic State}{5}
+\contentsline {subsection}{\numberline {2.4}Military Combat and Military Units}{6}
 \contentsline {subsubsection}{\numberline {2.4.1}Military Units Class Diagram}{6}
-\contentsline {subsubsection}{\numberline {2.4.2}Military Combat Class Diagram}{6}
-\contentsline {subsection}{\numberline {2.5}Missions}{6}
-\contentsline {subsection}{\numberline {2.6}Resources and Taxation}{7}
+\contentsline {subsubsection}{\numberline {2.4.2}Military Combat Class Diagram}{7}
+\contentsline {subsection}{\numberline {2.5}Missions}{8}
+\contentsline {subsection}{\numberline {2.6}Resources and Taxation}{9}
