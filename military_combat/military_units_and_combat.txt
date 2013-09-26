@@ -75,6 +75,7 @@ class Space {
  
  Stack splitStack(Stack originalStack, Unit[] selectedUnits, Character[] selectedCharacters) 
  void mergeStacks(Stack mergee, Stack merger)
+ void organizeStacks()
 }
 
 end package
