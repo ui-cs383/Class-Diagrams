@@ -1,0 +1,99 @@
+@startuml military_units_and_combat.png
+
+note as TITLE
+ Military Units
+ Author: Samuel Foster
+ Editors:
+ 
+ Reviewed by .. 
+end note
+
+class Stack {
+ string allegiance
+ 
+ boolean isInterceptionStack
+ 
+ Unit[] units
+ Character[] characters
+ 
+ boolean isCharacterStack()
+ void removeUnits(Unit[] selectedUnits)
+ void removeCharacters(Character[] selectedCharacters)
+}
+
+class Unit {
+ string name
+ string allegiance
+ 
+ boolean isMobile
+ boolean isElite
+ boolean isAtrocity
+ 
+ string atrocityType
+ 
+ int environStrength
+ int spaceStrength
+}
+
+
+package Missions
+
+class Action
+
+end package
+
+
+
+package Galactic_Events
+
+class EventCard
+
+end package
+
+
+
+package Character_Combat
+
+class Character {
+
+}
+
+class Ship {
+ void repair()
+}
+
+end package
+
+
+
+package Galactic_State
+
+class Space {
+ Stack[] presentStacks
+ void StackArrives()
+ void StackLeaves()
+ 
+ Stack splitStack(Stack originalStack, Unit[] selectedUnits, Character[] selectedCharacters) 
+ void mergeStacks(Stack mergee, Stack merger)
+}
+
+end package
+
+note "Elites and Atrocities allow atrocity Actions and Events" as N1
+
+Space o-- "*" Stack
+
+Stack o-- "*" Unit
+Stack o-- "*" Character 
+
+Unit - Ship : Elites allow ship repair >
+
+Unit .. N1
+N1 .. EventCard
+N1 .. Action
+
+
+
+hide circle
+
+@enduml
