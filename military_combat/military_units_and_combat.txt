@@ -161,7 +161,7 @@ N2 -- IrateLocals : <
 N2 -- Stack : <
 N2 -- PDB : <
 
-Space -- Combat : Occurs in a >
+Space -- Combat : Occurs in a <
 
 Space o-- "*" Stack
 
