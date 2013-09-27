@@ -22,7 +22,7 @@ class Stack {
 }
 
 class Unit {
- name: string
+ unit_type: string
  allegiance: string
  
  is_mobile: boolean
