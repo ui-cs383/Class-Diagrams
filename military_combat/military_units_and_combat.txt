@@ -9,30 +9,31 @@ note as TITLE
 end note
 
 class Stack {
- string allegiance
+ allegiance: string
  
- boolean isInterceptionStack
+ is_interception_stack: boolean
  
- Unit[] units
- Character[] characters
+ units: list
+ characters: list
  
- boolean isCharacterStack()
- void removeUnits(Unit[] selectedUnits)
- void removeCharacters(Character[] selectedCharacters)
+ is_character_stack(): boolean
+ remove_units(selected_units): none
+ remove_characters(selected_characters:list): none
 }
 
 class Unit {
- string name
- string allegiance
+ name: string
+ allegiance: string
  
- boolean isMobile
- boolean isElite
- boolean isAtrocity
+ is_mobile: boolean
+ is_elite: boolean
+ is_atrocity: boolean
+ is_suicide: boolean
  
- string atrocityType
+ atrocity_type: string
  
- int environStrength
- int spaceStrength
+ environ_strength: integer
+ space_strength: integer
 }
 
 
@@ -59,7 +60,7 @@ class Character {
 }
 
 class Ship {
- void repair()
+ repair(): none
 }
 
 end package
@@ -69,13 +70,13 @@ end package
 package Galactic_State
 
 class Space {
- Stack[] presentStacks
- void StackArrives()
- void StackLeaves()
+ stacks: list
+ stack_arrives(): none
+ stack_leaves(): none
  
- Stack splitStack(Stack originalStack, Unit[] selectedUnits, Character[] selectedCharacters) 
- void mergeStacks(Stack mergee, Stack merger)
- void organizeStacks()
+ split_stack(original_stack:Stack, selected_units:list, selected_characters:list): none 
+ merge_stacks(mergee:Stack, merger:Stack): none
+ organize_stacks(): none
 }
 
 end package
