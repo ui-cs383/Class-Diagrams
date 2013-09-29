@@ -18,7 +18,7 @@ note as TITLE
  Author: Samuel Foster
  Editors:
  
- Reviewed by .. 
+ Reviewed by Emeth Thompson
 end note
 
 class Stack {
