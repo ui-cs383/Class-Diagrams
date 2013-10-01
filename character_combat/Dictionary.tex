@@ -1,0 +1,69 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+\begin{document}
+
+
+\chapter{Container Classes}
+	\section{AttackerStack}
+	Data Types
+	\begin{itemize}
+		\item AttackerType: list of entity classes present in the stack.\
+		\item AttackDifferential: dictionary for to hit and damage lookup based on the entities in the stack.\
+		\item AttackModifier: list of attack modifiers collected from entity Possessions or Special abilities.\
+		\item CurrentRound: integer keeping track of the current round, to assist with updating the AttackModifier list and DefenseModifier list.
+	\end{itemize}
+	Methods
+	\begin{itemize}
+		\item Attack/Capture/ApplyWounds: update the state of the game via the server through bidirectional communication.
+		\item UpdateCombatRating/UpdateModifiers: perform server queries to determine new to hit and damage modifiers for lookup in the AttackDifferential dictionary.
+	\end{itemize}
+	\section{DefenderStack}
+	Data Types
+	\begin{itemize}
+		\item DefenderType: list of entity classes present in the stack.
+		\item DefenseDifferential: dictionary for to hit and damage lookup based on the entities in the stack.
+		\item DefenseModifier: list of attack modifiers collected from entity Possessions and or environ bonuses
+Methods.
+		\item Retaliate/BreakOff/Inactive/ApplyWounds: update the state of the game via the server through bidirectional communication.
+		\item UpdateCombatRating: perform server queries to determine new to hit and damage modifiers for lookup in the DefenseDifferential dictionary.
+	\end{itemize}
+	\section{MissionGroupStack}
+	Data Types
+	\begin{itemize}
+		\item EffectiveCombatRating: the combat rating minus wounds for all characters present in the mission group.
+		\item BonusDraws: list of integers for the applicable bonus draws characters receive for attempting certain kinds of missions.
+	\end{itemize}
+	Methods
+	\begin{itemize}
+ 		\item various methods will probably be needed to effectively request and update information on the server regarding the state of the characters present in the MissionGroupStack.
+	\end{itemize}
+	\section{MissionDeck}
+	\begin{itemize}
+ 		\item contain sate information regarding the available Missions.
+	\end{itemize}
+	\section{PossessionDeck}
+	\begin{itemize}
+ 		\item contain state information regarding the available Possessions.
+	\end{itemize}
+\chapter{Entity Classes}
+	\section{Military Unit}
+	\section{IrateLocals}
+	Methods
+	\begin{itemize}
+		\item GetType: determines the type of IrateLocal or Creature based upon a given environ.
+	\end{itemize}
+	\section{Creature}
+		Methods
+		\begin{itemize}
+			\item GetSpecial: determines the available Speicals given the creature by performing a server query.
+		\end{itemize}
+	\section{Character}
+	\section{MissionGroup}
+		\begin{itemize}
+ 			\item refer to the information above
+ 		\end{itemize}
+\chapter{Misc Classes}
+	\section{Possession}
+	\section{Ship}
+	\section{Companion}
+	\section{Mission}
+\end{document}
