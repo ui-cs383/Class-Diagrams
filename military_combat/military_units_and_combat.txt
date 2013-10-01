@@ -1,0 +1,181 @@
+@startuml military_units_and_combat.png
+
+/'Proposed changes for other diagrams:
+  	Galactic_State:
+  		Space:
+  			split_stack()
+  			merge_stacks()
+  			organize_stacks()
+  			
+  	Character_Combat:
+  		Ship:
+  			pilot
+  			passengers
+'/
+
+note as TITLE
+ Military Units and Combat
+ Author: Samuel Foster
+ Editors:
+ 
+ Reviewed by Emeth Thompson
+end note
+
+class Stack {
+ allegiance: string
+ 
+ is_interception_stack: boolean
+ 
+ units: list
+ characters: list
+ spaceships: list
+ 
+ is_character_stack(): boolean
+ is_military_stack(): boolean
+ remove_units(selected_units): none
+ remove_characters(selected_characters:list): none
+}
+
+class Unit {
+ unit_type: string
+ allegiance: string
+ 
+ is_mobile: boolean
+ is_elite: boolean
+ is_atrocity: boolean
+ is_suicide: boolean
+ 
+ atrocity_type: string
+ 
+ environ_strength: integer
+ space_strength: integer
+}
+
+
+class Combat{
+ detection_table: dict
+ mil_combat_table: dict
+ search_table: dict
+ squad_chart: dict
+ char_combat_table: dict
+ ..Character Combat..
+ character_combat(space:Space, characters_att:Stack, characters_def:Stack)
+ ..Character x Military combat..
+ mixed_combat(space:Space, mil_units_att:Stack, characters_def:Stack): none
+ 
+ ..Mission Group combat..
+ mission_combat(space:Space, creature:Creature, characters_def:MissionGroup): none
+ mission_combat(space:Space, irate_locals:IrateLocals, characters_def:MissionGroup): none
+ 
+ ..PDB Combat..
+ attack_pdb(space:Space, mil_units_att:Stack, pdb_def:PDB)
+ attack_pdb(space:Space, mil_units_att:Stack, pdb_def:PDB, mil_units_def:Stack)
+ raking_attack(space:Space, pdb_att:PDB, mil_units_def:Stack)
+ 
+ ..Military combat..
+ military_combat(space:Space, mil_units_att:Stack, mil_units_def:Stack)
+ 
+ ..Search..
+ military_search(space:Space, mil_units_srch:Stack, characters_det:Stack): boolean
+ character_search(space:Space, characters_srch:Stack, characters_det:Stack): boolean
+  
+ ..Interception..
+ intercept(space:Space, intercepting_units:list, intercepted_stack:Stack)
+ process_interception_stacks(space:Space)
+
+ ..Detection..
+ detection_routine(space:Space, pdb:PDB, characters:Stack)
+ 
+}
+
+
+
+
+package Missions
+
+class Action
+
+end package
+
+
+
+package Galactic_Events
+
+class EventCard
+
+end package
+
+
+
+package Character_Combat
+
+class Character {
+
+}
+
+class MissionGroup
+
+class IrateLocals
+
+class Creatures
+
+class Ship {
+ pilot:Character
+ passengers:list
+ 
+ repair(): none
+}
+
+end package
+
+
+
+package Galactic_State
+
+class Space {
+ stacks: list
+ stack_arrives(): none
+ stack_leaves(): none
+ 
+ split_stack(original_stack:Stack, selected_units:list, selected_characters:list): none 
+ merge_stacks(mergee:Stack, merger:Stack): none
+ organize_stacks(): none
+}
+
+class PDB
+
+end package
+
+note "Elites and Atrocities allow atrocity Actions and Events" as N1
+
+Unit .. N1
+N1 .. EventCard
+N1 .. Action
+
+note "participate in" as N2
+
+Combat -- N2 : <
+N2 -- MissionGroup : <
+N2 -- Creatures : <
+N2 -- IrateLocals : <
+N2 -- Stack : <
+N2 -- PDB : <
+
+Space -- Combat : Occurs in a <
+
+Space o-- "*" Stack
+
+Stack o-- "*" Unit
+Stack o-- "*" Character 
+
+Unit - Ship : Elites allow ship repair >
+
+
+
+
+
+
+
+hide circle
+
+@enduml
