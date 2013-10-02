@@ -1,0 +1,112 @@
+﻿@startuml
+hide circle
+package Decks {
+class Mission
+class Character
+class Action
+}
+ "Mission Results" <-- Character
+"Mission Results" <-- Planet
+"Mission Results" <-- Environ
+Character <-- "Mission Results"
+Mission <-- "Mission Results"
+Action <-- "Mission Results"
+Planet <-- "Mission Results"
+Environ <-- "Mission Results"
+Mission <-- Action
+Environ <-- Action
+Character <-- Mission
+Player <-- Deck 
+Player <-- "Mission Results"
+
+note "Mission and Mission Results\nAuthors: Greg Donaldson and Robert Meine \nEditors: \nReviewed by " as N1
+note "Mission, Action, and\nCharacter are extensions\nof the Deck class." as N2
+Deck <|-- N2
+N2 - Decks
+class Deck {
+	deckName : string
+	deckMax : int
+	deckNumberDrawn : int
+	deckInfo : List of Dictionaries
+	deckCardsDrawn : Ordered Dictionary
+	phasingPlayerSide : string
+	Deck : draw()
+	Deck : shuffle()
+	Deck : getSide()
+}
+
+class Player {
+	playerSide : string
+	resourceTrack : int
+	Player : removeResources()
+	Player : addResources()
+}
+
+class "Mission Results" {
+	totalBonus : int
+	result : boolean
+	resultFormula : dictionary
+	missionType : char
+	phasingPlayerSide : string
+	Mission Results : calculateBonus()
+	Mission Results : getSide()
+	Mission Results : checkRestriction()
+	Mission Results : getSuccess()
+	Mission Results : bonusDraws()
+	Mission Results : processResult()
+}
+
+class Character {
+	characterName : string
+	detectionStatus : boolean
+	diplomacy : int
+	combat : int
+	endurance : int
+	intelligence : int
+	leadership : int
+	navigation : int
+	evasion : int
+	Character : changeStatus()
+	Character : removeCharacter()
+}
+
+class Environ {
+	resourceValue : int
+	units : list of lists
+	capturedUnits : list of lists
+	rebelCamp : boolean
+	Environ : removeUnit()
+	Environ : removeCapturedUnit()
+	Environ : addUnit()
+	Environ : addCapturedUnit()
+	Environ : changeCamp()
+}
+
+class Planet {
+	coupRating : int
+	currentLoyalty : int
+	loyaltyMarker : string
+	Planet : changeLoyalty()
+	Planet : flipMarker()
+}
+
+class Action {
+	missionType : char
+	missionSuccess : boolean
+	Action : getEnvironSize()
+	Action : getMissionType()
+	Action : checkActionLetter()
+	Action : getCharacterAttribute()
+}
+
+class Mission {
+	missionName : string
+	missionType : char
+	assignedCharacter : list
+	Mission : getType()
+	Mission : assignMission()
+	Mission : checkRestriction()
+}
+
+@enduml
+
