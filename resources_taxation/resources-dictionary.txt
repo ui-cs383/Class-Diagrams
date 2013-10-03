@@ -1,0 +1,25 @@
+Resources:
+	- This is the class that will contain the amount of resources that the player (or faction) currently has.
+	- The Imperial player is allowed to tax planets depending on the game turn. Taxing fully causes loyalty to shift against his favor. Taxing none shifts loyalty in his favor. This is only applicable in Galactic Game
+	- The Rebel player can either receive Force Points by starting a rebellion.
+	- Both players receive resources as determined by the scenario being played.
+
+Military Units:
+	- Unit Cost Table is the conversion chart that converts force points into units.
+	- ReceiveMilitaryUnit() is called when BuyMilitaryUnit() is called. It returns the military unit requested to the player.
+
+Force Points:
+	- BuyMilitaryUnit(unitID) is called when a player chooses to buy a military unit with Force Points
+	- UpgradePDB() is called when a player wishes to upgrade the PDB on a planet by one level
+	- TurnPDBOn() is called when a player wished to turn a PDB from OFF to ON
+
+Planet Defense Base:
+	- planetID is the planet that the PDB is located
+	- isOn is a boolean which is true if the PDB is on/up
+	- level is the current level of the PDB
+	- Upgrade() increases the level of the PDB by one. Costs 3 Force Points
+	- TurnOn() sets isUp to true. Costs 1 Force Point
+
+User-Defined Associations:
+	- Upgrade/Spend: Upgrade (or turn on) is only called when the player decides to spend Force Points on that planet's PDB
+	- Buy/Receive: Receive is only called when the player decides to spend Force Points to buy military Units
