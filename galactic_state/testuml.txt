@@ -1,0 +1,129 @@
+@startuml
+hide circle
+skinparam shadowing false
+skinparam classFontStyle Bold
+skinparam classFontSize 14
+title Galactic States
+
+note as Title
+<b>Galactic State
+Authors:
+Jeff Crocker
+Ben Cumber
+
+Reviewed By:
+
+end note
+
+class Galaxy{
+  Provinces: List of 5 Provinces
+
+  GetProvinces(): List of Provinces
+}
+
+
+Class Province{
+  Systems: List of 4-6 Systems of Province
+  StrategicFlag: Bool
+
+  GetSystems(): List of Systems
+  SetStrategicFlag()
+  GetStrategicFlag(): Bool
+}
+
+
+class System{
+  Name: String
+  Planets: List of Planets
+  Drift 1: Space
+  Drift 2: Space
+
+  GetName(): String
+  GetPlanets(): List pointing to Planets
+}
+
+
+class Environ{
+  EnvironSize: Int = 3-6
+  EnvironType: Int = 0-6
+  Race: String
+  StarfaringRace: Int - 0-8
+  ResourceRating: Int
+  CoupRating: Int 0-3
+  Creature: Military Unit
+  Sovereign: Character
+  SovereignType
+
+  GetRace(): Int
+  GetStarfaring(): Int
+  GetEnvironType(): Int
+  GetResourceRating(): Int
+  GetCoupRating(): Int
+  GetSovereign(): Character
+  GetCreature(): Military Unit
+}
+
+
+
+class Planet{
+  Name: String
+  Coordinates: Int
+  Orbit: Space
+  Environs: List of Environs
+  Loyalty: Int
+  Controller: Int = 0-2
+  RebellionFlag: Bool
+  CapitalFlag: Bool
+  Secret
+  Local_PDB: PDB
+
+  ChangeLoyalty()
+  ChangeController()
+  ChangeRebellion()
+  GetSecret()
+  GetPDB(): PDB
+  GetRace(): Int
+  GetCoords(): Int
+  GetStarfaring(): Int
+  IsCapital(): Bool
+  IsThrone(): Bool
+  IsRebelling(): Bool
+}
+
+
+class PDB{
+  UpFlag: Bool
+  Level: Int = 0-2
+
+  PutUp()
+  PutDown()
+  GetLevel(): Int
+  ChangeLevel()
+  Atrocity(): Bool
+}
+
+
+class Space{
+  PresentStacks: List of military/character stacks
+  ParentSpace: Space
+  SiblingSpaces: List of Spaces
+  ChildSpaces: List of Spaces
+
+  GetPresentStacks(): List of Stacks
+  GetParentSpace(): Space
+  GetSiblingSpaces(): List of Spaces
+  StackArrives()
+  StackLeaves()
+}
+
+
+Province "5" --o Galaxy
+System "4-6" --o Province
+Planet "1-3" --o System
+Space "2" --o System
+Space "1" --o Planet
+Environ "1-3" --o Planet
+Environ --|> Space
+PDB "1" --o Planet
+
+@enduml
