@@ -27,7 +27,7 @@ Environ <-- Action : depends on <
 Character <-- Mission : depends on <
 Player <-- Deck : depends on <
 
-note "Mission and Mission Results\nAuthors: Greg Donaldson and Robert Meine \nEditors: \nReviewed by " as N1
+note "Mission and Mission Results\nAuthors: Greg Donaldson and Robert Meine \nEditors: \nReviewed by Justin Hall" as N1
 note "Mission, Action, and\nCharacter are extensions\nof the Deck class." as N2
 Deck <|-- N2
 N2 - Decks
