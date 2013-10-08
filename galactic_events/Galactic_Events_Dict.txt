@@ -1,0 +1,27 @@
+Galactic Events and Secret's
+
+Planets: A planet class defined outside of our scope.
+Planetary_Secrets: Class containing functions that will affect all Secret Counters.
+	+ Reveal2Planets: If a player completes a Gather Information mission with 2 I's, then player can select 2 planets to be revealed
+						(see Case 37.42)
+	+ RevealAllPlanets: If rebel player completes a Gather Information mission on the planet with the Imperial Archive secret
+						then all planetary secrets are revealed
+	+ InitializeCounters: Place a random counter on 16 specified planets
+Secret Counter: Identifies each secret counter on each planet and whether or not that secret has been revealed.  In charge of
+				displaying secrets to each player and applying the secret's effect to the game
+	- SecretID: The ID number of the individual secret
+	- Assigned_Planet: Which planet this secret is assigned to
+	- Revealed: Whether or not the rebel player can see this secret yet
+	+ ShowRebelSecret: If gather information mission is succesful, reveal planet.  Planet is revelaed automatically if Rebel has
+						a certain hero
+	+ ShareSecret: The Imperial player can choose to share a planet's secret at any time
+	+ ApplySecretEffect: Applies the effect of the secret to the planet
+Game_Class: User defined relationship between game class.  Outside of our scope
+Galactic_Events: A card deck of events that will affect the game world
+	- UsedCardArray: Contains used cards so that same card cannot be used more than once
+	+ DrawCard: During Rebel players turn, they will draw an Event card and applies the card's effect
+	+ InitializeCards: Shuffle the deck and generate all the cards
+Event_Cards: The individual cards that will apply some effect on the game world.  Each one has a wildly different effect.
+	- IDNum: The number of the specific card
+	+ApplyEventDescription: Consists of a single, very long Case statement with a case for each card ID card and a function to apply the 
+							effect of each card.
