@@ -1,0 +1,42 @@
+@startuml Galactic_Events.png
+hide circle
+
+class Planetary_Secrets{
+	+Reveal2Planets(PlanetA, PlanetB)
+	+RevealAllPlanets()
+	+InitializeCounters()
+}
+
+class Secret_Counter{
+	+SecretID
+	+Assigned_Planet
+	+Revealed
+	+ShowRebelSecret(RebelCharacters,PlayerType, Planet)
+	+ShareSecret(Planet)
+	+ApplySecretEffect(SecretID, Assigned_Planet)
+}
+
+class Galactic_Events{
+	+UsedCardArray
+	+DrawCard()
+	+InitializeCards()
+}
+
+class Event_Cards{
+	+IDNum
+	+ApplyEventDescription(IDNum)
+}
+
+class Planets{
+}
+
+class Game_Class{
+}
+
+
+Planetary_Secrets o-- Secret_Counter:16
+Planets o-- Planetary_Secrets
+Galactic_Events o-- Event_Cards:1..*
+Game_Class o-- Galactic_Events
+
+@enduml
