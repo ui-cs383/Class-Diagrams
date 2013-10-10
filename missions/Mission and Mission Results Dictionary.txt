@@ -1,0 +1,77 @@
+Mission and Mission Results
+Player: Class that is further defined outside of our scope. It is required to have the following attributes and functions:
+	+ playerSide: Which side the player is on.
+	+ resourceTrack: The amount of force points a player currently has.
+	+ removeResources: This removes resources from a player's force point track.
+	+ addResources: This adds resources to a player's force point track.
+
+Deck: A base class that extends to the Character, Mission, and Action classes and depends on information in the Player class.
+	+ deckName: Contains the name of the deck.
+	+ deckMax: Maximum number of cards in a deck.
+	+ deckNumberDrawn: Number of cards drawn in a deck.
+	+ deckInfo: A List of dictionaries. Each dictionary has information on different cards inside of a given deck.
+	+ deckCardsDrawn: An Ordered Dictionary, that keeps track of which cards have been drawn for error checking.
+	+ phasingPlayerSide: Which player's turn it currently is.
+	+ draw: Draw a card from a deck.
+	+ shuffle: When the number of drawn cards equals the number of maximum cards in a deck, the deck gets shuffled, and the number of drawn cards gets reset to 0.
+	+ getSide: Retrieves the phasing Player Side from the Player class, and changes the phasingPlayerSide attribute.
+
+Character: An extension of the Deck Class. Each iteration of this class contains information on a specific character. Also supplies info to the Mission Results Class.
+	+ CharacterName: The name of the character.
+	+ detectionStatus: A boolean that shows whether a character is currently detected. True if detected, false if not.
+	+ diplomacy: The character's diplomacy stat.
+	+ combat: The character's combat stat.
+	+ endurance: The character's endurance stat.
+	+ intelligence: The character's intelligence stat.
+	+ leadership: The character's leadership stat.
+	+ navigation: The character's navigation stat.
+	+ evasion: The character's evasion stat.
+	+ changeStatus: Changes the detectionStatus attribute to True or False.
+	+ removeCharacter: Removes a character from play.
+	+ addCharacter: Adds a character to play.
+
+Mission: An extension of the Deck Class. It depends on the Character Class, and can have information changed in it by the Mission Results Class.
+	+ missionName: The name of the mission.
+	+ missionType: The type of mission, stored as a Character.
+	+ assignedCharacter: A single character, or multiple characters, stored as a list that are assigned to a given mission.
+	+ getType: Retrieves the type of mission.
+	+ assignMission: Assigns a character and/or multiple characters to a mission.
+	+ checkRestriction: Checks to see if the mission is restricted to a given side.
+	
+Action: An exension of the Deck Class. It depends on the Mission Class and the Environ Class, and can have information changed in it by the Mission Results Class.
+	+ missionType: The type of mission, stored as a Character.
+	+ missionSuccess: A boolean that shows whether or not the mission succeeded. True if successful, false if not. Default value is false.
+	+ getEnvironSize: Retrieves the size of the Environ, should it be needed.
+	+ getMissionType: Retrieves the mission type.
+	+ checkActionLetter: Checks the Action character against the Mission Type, and processes the results.
+	+ getCharacterAttribute: Retrieves the character attribute, if needed.
+
+Environ: A class that is further defined outside of this scope. It can have information changed by the Mission Results Class. It must have the following attributes and functions:
+	+ resourceValue: The value of the Environ's resource.
+	+ units: A list of lists of units in the Environ. 
+	+ capturedUnits: A list of lists of units that are captured in the environ. 
+	+  rebelCamp: A boolean that stores whether or not a rebel camp is in the Environ. This is true if a rebelCamp exists, false if it does not.
+	+ removeUnit: Removes a unit from the list of units. This may occur because it was captured, or because it was removed from play.
+	+ removeCapturedUnit: Removes a captured unit from the captured unit list. This may occur because the unit was freed, or because it was removed from play.
+	+ addUnit: Adds a unit to active play. This may be caused by Mission Results.
+	+ addCapturedUnit: Adds a unit to the list of captured units. This may be caused by Mission Results.
+	+ changeCamp: This changes the rebelCamp variable to true or false.
+
+Planet: A class that is further defined outside of this scope. It can have information changed by the Mission Results Class. It must have the following attributes and functions:
+	+ coupRating: The current possibility that the planet will be subject to a coup.
+	+ currentLoyalty: The current loyalty to a given side.
+	+ loyaltyMarker: Who the planet is loyal to.
+	+ changeLoyalty: Changes the amount the planet is loyal to a given side.
+	+ flipMarker: Changes the loyalty of the planet, by changing the Loyalty Marker.
+
+Mission Results: This class class processes the results of a mission. It is dependent on information supplied by the Planet, Environ and Character Classes. It can change information in the Planet, Environ, Action, Mission, and Player classes.
+	+ totalBonus: Stores the total number of bonus draws.
+	+ result: A boolean that stores whether the mission was a success. True if successful, false if not.
+	+ resultFormula: A dictionary that stores the formulas necessary to calculate the total number of bonus draws.
+	+ missionType: The type of mission the player was on, stored as a character.
+	+ phasingPlayerSide: The current player's turn.
+	+ calculateBonus: Calculate's the number of bonus draws a player recieves.
+	+ getSide: Gets the side of the current player.
+	+ checkRestriction: Checks to see if the Mission Result differs depending on the side the player is on.
+	+ bonusDraws: If the player has any bonus draws, this causes the player to draw cards till the number of bonus draws is reached.
+	+ processResults: Processes the results of the mission and the bonus draws.
